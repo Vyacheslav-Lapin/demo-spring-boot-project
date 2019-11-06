@@ -1,5 +1,6 @@
 package ru.ais.demospringbootproject.controllers;
 
+import javax.annotation.PostConstruct;
 import javax.websocket.server.PathParam;
 import lombok.SneakyThrows;
 import org.jetbrains.annotations.Contract;
@@ -10,6 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CatController {
+
+  @SneakyThrows
+  @PostConstruct
+  public final void init() {
+    System.out.println("Я проинициализирован!");
+  }
 
   @SneakyThrows
   @Contract(pure = true)
