@@ -7,17 +7,14 @@ import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
-import ru.ais.demospringbootproject.model.UsualPerson;
+import ru.ais.demospringbootproject.model.Person;
 
 @SpringBootTest
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 //@ContextConfiguration("classpath:application-context.xml")
 class SpringTCFAppTest {
 
-  //todo 06.11.2019: сделать через Java-конфиг
-
-	UsualPerson person;
+	Person person;
 
   @Test
   void testInitPerson() {

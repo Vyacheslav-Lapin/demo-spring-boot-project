@@ -1,11 +1,6 @@
 package ru.ais.demospringbootproject.model;
 
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Builder.Default;
@@ -16,7 +11,7 @@ import lombok.Singular;
 @Builder
 @AllArgsConstructor
 //@Entity
-public class UsualPerson implements Person {
+public class PersonImpl implements Person {
 
 //  @Id
   @Default

@@ -7,7 +7,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.ais.demospringbootproject.model.Country;
 import ru.ais.demospringbootproject.model.Person;
-import ru.ais.demospringbootproject.model.UsualPerson;
+import ru.ais.demospringbootproject.model.PersonImpl;
 
 class HelloWorldTest {
 
@@ -15,18 +15,18 @@ class HelloWorldTest {
 
   AbstractApplicationContext context = new ClassPathXmlApplicationContext(CONFIG);
 
-  @Test
-  public void testInitPerson() {
-    assertEquals(getExpectedPerson(), context.getBean("person"));
-  }
-
   static Person getExpectedPerson() {
-    return UsualPerson.builder()
+    return PersonImpl.builder()
                .age(35)
                .name("John Smith")
                .country(new Country(1, "Russia", "RU"))
                .contact("222-33-22")
                .contact("kjhdsg@kjhsdf.ru")
                .build();
+  }
+
+  @Test
+  public void testInitPerson() {
+    assertEquals(getExpectedPerson(), context.getBean("person"));
   }
 }

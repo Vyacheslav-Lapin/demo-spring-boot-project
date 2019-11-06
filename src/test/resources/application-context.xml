@@ -5,7 +5,7 @@
        xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-  <bean id="person" class="ru.ais.demospringbootproject.model.UsualPerson"
+  <bean id="person" class="ru.ais.demospringbootproject.model.PersonImpl"
         c:id="1"
         c:name="John Smith"
         c:age="35"
