@@ -12,8 +12,7 @@
         c:country-ref="country"
         c:contacts-ref="contacts"
         c:height="1.78"
-        c:isProgrammer="true"
-  />
+        c:isProgrammer="true"/>
 
   <bean id="country" class="ru.ais.demospringbootproject.model.Country"
         c:id="1"

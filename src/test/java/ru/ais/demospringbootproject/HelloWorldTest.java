@@ -1,3 +1,5 @@
+package ru.ais.demospringbootproject;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -18,7 +20,7 @@ class HelloWorldTest {
     assertEquals(getExpectedPerson(), context.getBean("person"));
   }
 
-  Person getExpectedPerson() {
+  static Person getExpectedPerson() {
     return UsualPerson.builder()
                .age(35)
                .name("John Smith")
