@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.hateoas.MediaTypes;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -27,19 +28,12 @@ import ru.ais.demospringbootproject.model.Cat;
 @SpringBootTest
 @AutoConfigureMockMvc
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
-//@WithMockUser(authorities = "ADMIN")
+@WithMockUser(authorities = "ADMIN")
 class DemoSpringBootProjectApplicationTests {
 
   MockMvc mockMvc;
 
   CatRepository catRepository;
-
-  @BeforeEach
-  void setUp() {
-    Arrays.stream("Васька,Мурка,Барсик".split(","))
-        .map(Cat::new)
-        .forEach(catRepository::save);
-  }
 
   @Test
   void contextLoads() {

@@ -1,4 +1,4 @@
-GET http://localhost:8080/cats
+GET http://localhost:8090/cats
 Accept: application/json
 
 ###

@@ -37,7 +37,8 @@ build:
 	chmod +x ./target/demo-spring-boot-project-0.0.1-SNAPSHOT.jar
 
 run:
-	./mvnw spring-boot:start -Dspring.profiles.active=local
+	./mvnw spring-boot:start
+#	-Dspring.profiles.active=local
 #	./target/demo-spring-boot-project-0.0.1-SNAPSHOT.jar
 #	java -jar --enable-preview ./target/demo-spring-boot-project-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 
