@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.jetbrains.annotations.NotNull;
 
 @Data
 @Builder
@@ -16,10 +16,10 @@ public class Country {
 
   int id;
 
-  @NotNull
+  @NonNull
   String name;
 
-  @NotNull
+  @NonNull
   String codeName;
 
 }

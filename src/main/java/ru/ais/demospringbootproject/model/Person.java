@@ -3,7 +3,7 @@ package ru.ais.demospringbootproject.model;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 
-public interface Person {
+public interface Person<T extends Person<T>> {
 
   default void sayHello(@NotNull Person person2) {
     System.out.printf("Hello, %s, I'm %s",
@@ -13,29 +13,29 @@ public interface Person {
 
   int getId();
 
-  Person setId(int id);
+  T setId(int id);
 
   String getName();
 
-  Person setName(String name);
+  T setName(String name);
 
   Country getCountry();
 
-  Person setCountry(Country country);
+  T setCountry(Country country);
 
   int getAge();
 
-  Person setAge(int age);
+  T setAge(int age);
 
   float getHeight();
 
-  Person setHeight(float height);
+  T setHeight(float height);
 
   boolean isProgrammer();
 
-  Person setProgrammer(boolean isProgrammer);
+  T setProgrammer(boolean isProgrammer);
 
   List<String> getContacts();
 
-  Person setContacts(List<String> contacts);
+  T setContacts(List<String> contacts);
 }

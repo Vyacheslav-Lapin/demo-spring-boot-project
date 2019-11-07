@@ -6,12 +6,13 @@ import lombok.Builder;
 import lombok.Builder.Default;
 import lombok.Data;
 import lombok.Singular;
+import org.springframework.stereotype.Component;
 
 @Data
 @Builder
 @AllArgsConstructor
 //@Entity
-public class PersonImpl implements Person {
+public class PersonImpl implements Customer {
 
 //  @Id
   @Default
@@ -19,17 +20,21 @@ public class PersonImpl implements Person {
 
   String name;
 
-//  @ManyToOne(fetch = FetchType.EAGER)
-//  @JoinColumn(name = "country_id")
-  Country country;
-
   int age;
 
   @Default
+  @SuppressWarnings("UnusedAssignment")
   float height = 1.78f;
 
   @Default
+  @SuppressWarnings("UnusedAssignment")
   boolean isProgrammer = true;
+
+  boolean broke;
+
+//  @ManyToOne(fetch = FetchType.EAGER)
+//  @JoinColumn(name = "country_id")
+  Country country;
 
   @Singular
   List<String> contacts;

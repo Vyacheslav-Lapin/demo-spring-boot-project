@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import ru.ais.demospringbootproject.model.Person;
 
-@SpringBootTest
+@SpringBootTest//(classes = TestConfig.class)
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 //@ContextConfiguration("classpath:application-context.xml")
 class SpringTCFAppTest {
