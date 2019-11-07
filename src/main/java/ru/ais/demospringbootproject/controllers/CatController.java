@@ -1,7 +1,6 @@
 package ru.ais.demospringbootproject.controllers;
 
 import javax.annotation.PostConstruct;
-import javax.websocket.server.PathParam;
 import lombok.SneakyThrows;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;

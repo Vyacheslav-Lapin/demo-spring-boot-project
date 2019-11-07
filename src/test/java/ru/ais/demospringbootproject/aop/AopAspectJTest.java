@@ -5,8 +5,8 @@ import static org.junit.Assert.assertTrue;
 
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.NonFinal;
-import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import ru.ais.demospringbootproject.commons.TestUtils;
@@ -28,6 +28,8 @@ class AopAspectJTest {
   @BeforeEach
   public void setUp() {
     out = TestUtils.fromSystemOutPrintln(() -> bar.sellSquishee(customer));
+
+    System.out.println(out);
   }
 
   @Test
@@ -54,7 +56,7 @@ class AopAspectJTest {
 
   @Test
   public void testAllAdvices() {
-    assertFalse("barObject instanceof ApuBar",
+    assertTrue("barObject instanceof ApuBar",
         bar instanceof ApuBar);
   }
 }

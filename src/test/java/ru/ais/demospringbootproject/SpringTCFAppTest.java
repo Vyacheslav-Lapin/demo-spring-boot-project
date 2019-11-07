@@ -7,18 +7,18 @@ import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import ru.ais.demospringbootproject.model.Person;
+import ru.ais.demospringbootproject.model.Customer;
 
 @SpringBootTest//(classes = TestConfig.class)
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 //@ContextConfiguration("classpath:application-context.xml")
 class SpringTCFAppTest {
 
-	Person person;
+	Customer customer;
 
   @Test
   void testInitPerson() {
-		assertEquals(getExpectedPerson(), person);
+		assertEquals(getExpectedPerson(), customer);
 	}
 
 }

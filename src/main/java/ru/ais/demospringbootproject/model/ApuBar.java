@@ -1,7 +1,9 @@
 package ru.ais.demospringbootproject.model;
 
 import org.jetbrains.annotations.NotNull;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ApuBar implements Bar {
 
   @Override

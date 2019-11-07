@@ -1,8 +1,8 @@
 package ru.ais.demospringbootproject.model;
 
-import lombok.Data;
+import lombok.Value;
 
-@Data
-public class Squishee {
+@Value
+public class Squishee implements Drink {
   String name;
 }

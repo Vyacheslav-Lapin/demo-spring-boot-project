@@ -3,15 +3,15 @@ package ru.ais.demospringbootproject;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ru.ais.demospringbootproject.model.Country;
-import ru.ais.demospringbootproject.model.Person;
-import ru.ais.demospringbootproject.model.PersonImpl;
+import ru.ais.demospringbootproject.model.Customer;
+import ru.ais.demospringbootproject.model.CustomerImpl;
 
 @Configuration
 public class TestConfig {
 
   @Bean
-  Person person(Country country) {
-    return PersonImpl.builder()
+  Customer customer(Country country) {
+    return CustomerImpl.builder()
                .age(35)
                .name("John Smith")
                .country(country)

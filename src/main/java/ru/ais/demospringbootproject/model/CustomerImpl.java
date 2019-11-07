@@ -6,15 +6,14 @@ import lombok.Builder;
 import lombok.Builder.Default;
 import lombok.Data;
 import lombok.Singular;
-import org.springframework.stereotype.Component;
 
 @Data
 @Builder
 @AllArgsConstructor
 //@Entity
-public class PersonImpl implements Customer {
+public class CustomerImpl implements Customer {
 
-//  @Id
+  //  @Id
   @Default
   int id = 1;
 
@@ -32,8 +31,8 @@ public class PersonImpl implements Customer {
 
   boolean broke;
 
-//  @ManyToOne(fetch = FetchType.EAGER)
-//  @JoinColumn(name = "country_id")
+  //  @ManyToOne(fetch = FetchType.EAGER)
+  //  @JoinColumn(name = "country_id")
   Country country;
 
   @Singular
