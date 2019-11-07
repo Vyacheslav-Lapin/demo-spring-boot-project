@@ -22,19 +22,19 @@ class JdbcTest {
 
   private List<Country> expectedCountryList = new ArrayList<>();
   private List<Country> expectedCountryListStartsWithA = new ArrayList<Country>();
-  private Country countryWithChangedName = new Country(1, "Russia", "RU");
+  private Country countryWithChangedName = new Country(8, "Russia", "RU");
 
   @BeforeEach
   public void setUp() throws Exception {
     initExpectedCountryLists();
-    countryDao.loadCountries();
+    countryDao.loadInitData();
   }
 
 
   @Test
   @DirtiesContext
   public void testCountryList() {
-    List<Country> countryList = countryDao.getCountryList();
+    List<Country> countryList = countryDao.get();
     assertNotNull(countryList);
     assertEquals(expectedCountryList.size(), countryList.size());
     for (int i = 0; i < expectedCountryList.size(); i++) {
@@ -45,7 +45,7 @@ class JdbcTest {
   @Test
   @DirtiesContext
   public void testCountryListStartsWithA() {
-    List<Country> countryList = countryDao.getCountryListStartWith("A");
+    List<Country> countryList = countryDao.getStartWith("A");
     assertNotNull(countryList);
     assertEquals(expectedCountryListStartsWithA.size(), countryList.size());
     for (int i = 0; i < expectedCountryListStartsWithA.size(); i++) {
@@ -56,14 +56,14 @@ class JdbcTest {
   @Test
   @DirtiesContext
   public void testCountryChange() {
-    countryDao.updateCountryName("RU", "Russia");
-    assertEquals(countryWithChangedName, countryDao.getCountryByCodeName("RU"));
+    countryDao.updateName("RU", "Russia");
+    assertEquals(countryWithChangedName, countryDao.getByCodeName("RU"));
   }
 
   private void initExpectedCountryLists() {
     for (int i = 0; i < CountryDao.COUNTRY_INIT_DATA.length; i++) {
       String[] countryInitData = CountryDao.COUNTRY_INIT_DATA[i];
-      Country country = new Country(i, countryInitData[0], countryInitData[1]);
+      Country country = new Country(i + 1, countryInitData[0], countryInitData[1]);
       expectedCountryList.add(country);
       if (country.getName().startsWith("A")) {
         expectedCountryListStartsWithA.add(country);
